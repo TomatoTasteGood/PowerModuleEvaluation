@@ -18,49 +18,49 @@ def funcThermal(p_T1, p_D1, p_T2, p_D2, p_T5, p_D5, t_sample, temp_input, vars_l
     if(type_solver == "Euler1"):
         # T1
         t1_T1 = t1_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT1"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t1_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"]* p_T1)
-        t2_T1 = t2_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT2"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t2_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"]* p_T1)
-        t3_T1 = t3_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT3"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t3_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"]* p_T1)
-        t4_T1 = t4_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT4"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t4_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"]* p_T1)
+        t2_T1 = t2_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT2"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"] * t2_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"]* p_T1)
+        t3_T1 = t3_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT3"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"] * t3_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"]* p_T1)
+        t4_T1 = t4_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT4"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"] * t4_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"]* p_T1)
         t5_T1 = t5_T1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT_CH_BASE"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT_CH_BASE"] * t5_T1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT_CH_BASE"]* p_T1)
         t6_T1 = t6_T1 + t_sample *(-1 / PARAM_PAD.param[type_pad]["R_TH_HEATSINK"] / PARAM_PAD.param[type_pad]["C_TH_HEATSINK"] * t6_T1 + 1/PARAM_PAD.param[type_pad]["C_TH_HEATSINK"]* (p_T1+p_D1+p_T2+p_D2+p_T5+p_D5))
         t7_T1 = t1_T1 + t2_T1 + t3_T1 + t4_T1 + t5_T1 + t6_T1 + temp_input
         # D1
         t1_D1 = t1_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE1"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t1_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"]* p_D1)
-        t2_D1 = t2_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE2"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t2_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"]* p_D1)
-        t3_D1 = t3_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE3"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t3_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"]* p_D1)
-        t4_D1 = t4_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE4"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t4_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"]* p_D1)
+        t2_D1 = t2_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE2"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"] * t2_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"]* p_D1)
+        t3_D1 = t3_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE3"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"] * t3_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"]* p_D1)
+        t4_D1 = t4_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE4"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"] * t4_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"]* p_D1)
         t5_D1 = t5_D1 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE_CH_BASE"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE_CH_BASE"] * t5_D1 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE_CH_BASE"]* p_D1)
         t6_D1 = t6_D1 + t_sample *(-1 / PARAM_PAD.param[type_pad]["R_TH_HEATSINK"] / PARAM_PAD.param[type_pad]["C_TH_HEATSINK"] * t6_D1 + 1/PARAM_PAD.param[type_pad]["C_TH_HEATSINK"]* (p_T1+p_D1+p_T2+p_D2+p_T5+p_D5))
         t7_D1 = t1_D1 + t2_D1 + t3_D1 + t4_D1 + t5_D1 + t6_D1 + temp_input
         # T2
         t1_T2 = t1_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT1"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t1_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"]* p_T2)
-        t2_T2 = t2_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT2"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t2_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"]* p_T2)
-        t3_T2 = t3_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT3"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t3_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"]* p_T2)
-        t4_T2 = t4_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT4"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t4_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"]* p_T2)
+        t2_T2 = t2_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT2"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"] * t2_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"]* p_T2)
+        t3_T2 = t3_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT3"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"] * t3_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"]* p_T2)
+        t4_T2 = t4_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT4"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"] * t4_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"]* p_T2)
         t5_T2 = t5_T2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT_CH_BASE"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT_CH_BASE"] * t5_T2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT_CH_BASE"]* p_T2)
         t6_T2 = t6_T2 + t_sample *(-1 / PARAM_PAD.param[type_pad]["R_TH_HEATSINK"] / PARAM_PAD.param[type_pad]["C_TH_HEATSINK"] * t6_T2 + 1/PARAM_PAD.param[type_pad]["C_TH_HEATSINK"]* (p_T1+p_D1+p_T2+p_D2+p_T5+p_D5))
         t7_T2 = t1_T2 + t2_T2 + t3_T2 + t4_T2 + t5_T2 + t6_T2 + temp_input
         # D2
         t1_D2 = t1_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE1"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t1_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"]* p_D2)
-        t2_D2 = t2_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE2"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t2_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"]* p_D2)
-        t3_D2 = t3_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE3"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t3_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"]* p_D2)
-        t4_D2 = t4_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE4"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t4_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"]* p_D2)
+        t2_D2 = t2_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE2"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"] * t2_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"]* p_D2)
+        t3_D2 = t3_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE3"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"] * t3_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"]* p_D2)
+        t4_D2 = t4_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE4"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"] * t4_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"]* p_D2)
         t5_D2 = t5_D2 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE_CH_BASE"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE_CH_BASE"] * t5_D2 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE_CH_BASE"]* p_D2)
         t6_D2 = t6_D2 + t_sample *(-1 / PARAM_PAD.param[type_pad]["R_TH_HEATSINK"] / PARAM_PAD.param[type_pad]["C_TH_HEATSINK"] * t6_D2 + 1/PARAM_PAD.param[type_pad]["C_TH_HEATSINK"]* (p_T1+p_D1+p_T2+p_D2+p_T5+p_D5))
         t7_D2 = t1_D2 + t2_D2 + t3_D2 + t4_D2 + t5_D2 + t6_D2 + temp_input
         # T5
         t1_T5 = t1_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT1"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t1_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"]* p_T5)
-        t2_T5 = t2_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT2"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t2_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"]* p_T5)
-        t3_T5 = t3_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT3"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t3_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"]* p_T5)
-        t4_T5 = t4_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT4"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT1"] * t4_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"]* p_T5)
+        t2_T5 = t2_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT2"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"] * t2_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT2"]* p_T5)
+        t3_T5 = t3_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT3"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"] * t3_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT3"]* p_T5)
+        t4_T5 = t4_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT4"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"] * t4_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT4"]* p_T5)
         t5_T5 = t5_T5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_IGBT_CH_BASE"] / PARAM_IGBT.param[type_IGBT]["C_TH_IGBT_CH_BASE"] * t5_T5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_IGBT_CH_BASE"]* p_T5)
         t6_T5 = t6_T5 + t_sample *(-1 / PARAM_PAD.param[type_pad]["R_TH_HEATSINK"] / PARAM_PAD.param[type_pad]["C_TH_HEATSINK"] * t6_T5 + 1/PARAM_PAD.param[type_pad]["C_TH_HEATSINK"]* (p_T1+p_D1+p_T2+p_D2+p_T5+p_D5))
         t7_T5 = t1_T5 + t2_T5 + t3_T5 + t4_T5 + t5_T5 + t6_T5 + temp_input
         # D5
         t1_D5 = t1_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE1"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t1_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"]* p_D5)
-        t2_D5 = t2_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE2"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t2_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"]* p_D5)
-        t3_D5 = t3_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE3"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t3_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"]* p_D5)
-        t4_D5 = t4_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE4"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE1"] * t4_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"]* p_D5)
+        t2_D5 = t2_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE2"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"] * t2_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE2"]* p_D5)
+        t3_D5 = t3_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE3"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"] * t3_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE3"]* p_D5)
+        t4_D5 = t4_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE4"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"] * t4_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE4"]* p_D5)
         t5_D5 = t5_D5 + t_sample *(-1 / PARAM_IGBT.param[type_IGBT]["R_TH_DIODE_CH_BASE"] / PARAM_IGBT.param[type_IGBT]["C_TH_DIODE_CH_BASE"] * t5_D5 + 1/PARAM_IGBT.param[type_IGBT]["C_TH_DIODE_CH_BASE"]* p_D5)
         t6_D5 = t6_D5 + t_sample *(-1 / PARAM_PAD.param[type_pad]["R_TH_HEATSINK"] / PARAM_PAD.param[type_pad]["C_TH_HEATSINK"] * t6_D5 + 1/PARAM_PAD.param[type_pad]["C_TH_HEATSINK"]* (p_T1+p_D1+p_T2+p_D2+p_T5+p_D5))
         t7_D5 = t1_D5 + t2_D5 + t3_D5 + t4_D5 + t5_D5 + t6_D5 + temp_input
@@ -131,13 +131,13 @@ if __name__ == "__main__":
                     [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, tempOutlet],
                     [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, tempOutlet]]
     tSample = 500e-6
-    pLossT1Peak = 1000*np.pi
-    pLossD1Peak = 300*np.pi
-    pLossT2Peak = 500*np.pi
-    pLossD2Peak = 150*np.pi
-    pLossT5Peak = 100*np.pi
-    pLossD5Peak = 400*np.pi
-    for i in range(int((45.0*0.1/tSample*1))):
+    pLossT1Peak = 250*np.pi
+    pLossD1Peak = 100*np.pi
+    pLossT2Peak = 150*np.pi
+    pLossD2Peak = 50*np.pi
+    pLossT5Peak = 200*np.pi
+    pLossD5Peak = 25*np.pi
+    for i in range(int((45.0*9/tSample*1))):
         pLossT1 = pLossT1Peak*np.sin(2*np.pi*6*i*tSample)
         if(pLossT1<0):
             pLossT1=0
@@ -225,29 +225,29 @@ if __name__ == "__main__":
     # plt.grid()
     # plt.show()
     
-    plt.figure()
-    plt.subplot(7,1,1)
-    plt.plot(tList, t1_T1_List)
-    plt.grid()
-    plt.subplot(7,1,2)
-    plt.plot(tList, t2_T1_List)
-    plt.grid()
-    plt.subplot(7,1,3)
-    plt.plot(tList, t3_T1_List)
-    plt.grid()
-    plt.subplot(7,1,4)
-    plt.plot(tList, t4_T1_List)
-    plt.grid()
-    plt.subplot(7,1,5)
-    plt.plot(tList, t5_T1_List)
-    plt.grid()
-    plt.subplot(7,1,6)
-    plt.plot(tList, t6_T1_List)
-    plt.grid()
-    plt.subplot(7,1,7)
-    plt.plot(tList, t7_T1_List)
-    plt.grid()
-    plt.show()
+    # plt.figure()
+    # plt.subplot(7,1,1)
+    # plt.plot(tList, t1_T1_List)
+    # plt.grid()
+    # plt.subplot(7,1,2)
+    # plt.plot(tList, t2_T1_List)
+    # plt.grid()
+    # plt.subplot(7,1,3)
+    # plt.plot(tList, t3_T1_List)
+    # plt.grid()
+    # plt.subplot(7,1,4)
+    # plt.plot(tList, t4_T1_List)
+    # plt.grid()
+    # plt.subplot(7,1,5)
+    # plt.plot(tList, t5_T1_List)
+    # plt.grid()
+    # plt.subplot(7,1,6)
+    # plt.plot(tList, t6_T1_List)
+    # plt.grid()
+    # plt.subplot(7,1,7)
+    # plt.plot(tList, t7_T1_List)
+    # plt.grid()
+    # plt.show()
     
     # plt.figure()
     # plt.subplot(7,1,1)

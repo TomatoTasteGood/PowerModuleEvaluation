@@ -146,6 +146,42 @@ def funcPowerLossPerSwitch3L(i, u_cmd, v_dc, t_sw, temp_T1, temp_D1, temp_T2, te
                 e_loss_dict["e_cond_T3"] = (p1_vce_ic_T3*i**3 + p2_vce_ic_T3*i**2 + p3_vce_ic_T3*i + p4_vce_ic_T3)*i*t_sw
                 e_loss_dict["e_cond_T4"] = (p1_vce_ic_T4*i**3 + p2_vce_ic_T4*i**2 + p3_vce_ic_T4*i + p4_vce_ic_T4)*i*t_n
                 e_loss_dict["e_cond_D6"] = (p1_vf_if_D6*i**3 + p2_vf_if_D6*i**2 + p3_vf_if_D6*i + p4_vf_if_D6)*i*t_z
+    elif(anpc_type==1):
+        if(i>=0):
+            if(mode==1):
+                if(t_p>dead_time and t_z>dead_time):
+                    e_loss_dict["e_on_T1"] = (p1_e_on_T1*i**3+p2_e_on_T1*i**2+p3_e_on_T1*i+p4_e_on_T1)*(v_dc/V_BASE)*ratio_e_on_rg_T1
+                    e_loss_dict["e_off_T1"] = (p1_e_off_T1*i**3+p2_e_off_T1*i**2+p3_e_off_T1*i+p4_e_off_T1)*(v_dc/V_BASE)*ratio_e_off_rg_T1
+                    e_loss_dict["e_rec_D5"] = (p1_e_rec_D5*i**3 + p2_e_rec_D5*i**2 + p3_e_rec_D5*i + p4_e_rec_D5)*(v_dc/V_BASE)*ratio_e_rec_rg_D5
+                e_loss_dict["e_cond_T1"] = (p1_vce_ic_T1*i**3 +p2_vce_ic_T1*i**2 + p3_vce_ic_T1*i + p4_vce_ic_T1)*i*t_p 
+                e_loss_dict["e_cond_D5"] = (p1_vf_if_D5*i**3 +p2_vf_if_D5*i**2 + p3_vf_if_D5*i + p4_vf_if_D5)*i*t_z
+                e_loss_dict["e_cond_T2"] = (p1_vce_ic_T2*i**3 +p2_vce_ic_T2*i**2 + p3_vce_ic_T2*i + p4_vce_ic_T2)*i*t_sw
+            else:
+                if(t_z>dead_time and t_n>dead_time):
+                    e_loss_dict["e_on_T6"] = (p1_e_on_T6*i**3+p2_e_on_T6*i**2+p3_e_on_T6*i+p4_e_on_T6)*(v_dc/V_BASE)*ratio_e_on_rg_T6
+                    e_loss_dict["e_off_T6"] = (p1_e_off_T6*i**3+p2_e_off_T6*i**2+p3_e_off_T6*i+p4_e_off_T6)*(v_dc/V_BASE)*ratio_e_off_rg_T6
+                    e_loss_dict["e_rec_D4"] = (p1_e_rec_D5*i**3+p2_e_rec_D4*i**2+p3_e_rec_D4*i+p4_e_rec_D4)*(v_dc/V_BASE)*ratio_e_rec_rg_D4
+                e_loss_dict["e_cond_T6"] = (p1_vce_ic_T6*i**3+p2_vce_ic_T6*i**2+p3_vce_ic_T6*i+p4_vce_ic_T6)*i*t_z
+                e_loss_dict["e_cond_D3"] = (p1_vf_if_D3*i**3+p2_vf_if_D3*i**2+p3_vf_if_D3*i+p4_vf_if_D3)*i*t_sw
+                e_loss_dict["e_cond_D4"] = (p1_vf_if_D4*i**3+p2_vf_if_D4*i**2+p3_vf_if_D4*i+p4_vf_if_D4)*i*t_n
+        else:
+            i=abs(i)
+            if(mode==1):
+                if(t_p>dead_time and t_z>dead_time):
+                    e_loss_dict["e_on_T5"] = (p1_e_on_T5*i**3+p2_e_on_T5*i**2+p3_e_on_T5*i+p4_e_on_T5)*(v_dc/V_BASE)*ratio_e_on_rg_T5
+                    e_loss_dict["e_off_T5"] = (p1_e_off_T5*i**3+p2_e_off_T5*i**2+p3_e_on_T5*i+p4_e_on_T5)*(v_dc/V_BASE)*ratio_e_off_rg_T5
+                    e_loss_dict["e_rec_D1"] = (p1_e_rec_D1*i**3+p2_e_rec_D1*i**2+p3_e_rec_D1*i+p4_e_rec_D1)*(v_dc/V_BASE)*ratio_e_rec_rg_D1
+                e_loss_dict["e_cond_D1"] = (p1_vf_if_D1*i**3+p2_vf_if_D2*i**2+p3_vf_if_D1*i+p4_vf_if_D1)*i*t_p
+                e_loss_dict["e_cond_D2"] = (p1_vf_if_D2*i**3+p2_vf_if_D2*i**2+p3_vf_if_D2*i+p4_vf_if_D2)*i*t_sw
+                e_loss_dict["e_cond_T5"] = (p1_vce_ic_T5*i**3+p2_vce_ic_T5*i**2+p3_vce_ic_T5*i+p4_vce_ic_T5)*i*t_z
+            else:
+                if(t_z>dead_time and t_n>dead_time):
+                    e_loss_dict["e_on_T4"] = (p1_e_on_T4*i**3+p2_e_on_T4*i**2+p3_e_on_T4*i+p4_e_on_T4)*(v_dc/V_BASE)*ratio_e_on_rg_T4
+                    e_loss_dict["e_off_T4"] = (p1_e_off_T4*i**3+p2_e_off_T4*i**2+p3_e_off_T4*i+p4_e_off_T4)*(v_dc/V_BASE)*ratio_e_off_rg_T4
+                    e_loss_dict["e_rec_D6"] = (p1_e_rec_D6*i**3+p2_e_rec_D6*i**2+p3_e_rec_D6*i+p4_e_rec_D6)*(v_dc/V_BASE)*ratio_e_rec_rg_D6
+                e_loss_dict["e_cond_T3"] = (p1_vce_ic_T3*i**3+p2_vce_ic_T3*i**2+p3_vce_ic_T3*i+p4_vce_ic_T3)*i*t_sw
+                e_loss_dict["e_cond_T4"] = (p1_vce_ic_T4*i**3+p2_vce_ic_T4*i**2+p3_vce_ic_T4*i+p4_vce_ic_T4)*i*t_n
+                e_loss_dict["e_cond_D6"] = (p1_vf_if_D6*i**3+p2_vf_if_D6*i**2+p3_vf_if_D6*i+p4_vf_if_D6)*i*t_z
 
     return e_loss_dict, t_p, t_z, t_n, mode
     
