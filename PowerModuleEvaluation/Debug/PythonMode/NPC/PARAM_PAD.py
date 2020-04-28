@@ -13,6 +13,6 @@ param["Test_3L"]["C_TH_HEATSINK"] = param["Test_3L"]["T_TH_HEATSINK"] / param["T
 
 #
 param["Test_Buck_2L"] = {}
-param["Test_Buck_2L"]["R_TH_HEATSINK"] = 0.10
+param["Test_Buck_2L"]["R_TH_HEATSINK"] = 0.065
 param["Test_Buck_2L"]["T_TH_HEATSINK"] = 45.0
 param["Test_Buck_2L"]["C_TH_HEATSINK"] = param["Test_Buck_2L"]["T_TH_HEATSINK"] / param["Test_Buck_2L"]["R_TH_HEATSINK"]

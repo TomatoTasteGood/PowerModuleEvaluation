@@ -88,6 +88,6 @@ def funcPowerLossPerSwitchBucK2L(i, u_cmd, v_dc, t_sw, temp_T1, temp_D1, temp_T2
 if __name__ == "__main__":
     print(">"*50)
     print("")
-    e_out, t_p, t_n = funcPowerLossPerSwitchBucK2L(600, 0, 900, 500e-6, 125, 125, 125, 125, [4], [4])
+    e_out, t_p, t_n = funcPowerLossPerSwitchBucK2L(200, 0, 900, 500e-6, 125, 125, 125, 125, [1], [1])
     for i in e_out:
         print(i, '--->', e_out[i], "loss: ",e_out[i]*2000)

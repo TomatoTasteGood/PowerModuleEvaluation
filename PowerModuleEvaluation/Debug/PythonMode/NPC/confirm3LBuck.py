@@ -10,9 +10,7 @@ import PARAM_PAD
 import calcPowerLoss2LBuckFuncs
 import calcThermal2LBuckFuncs
 #
-
 type_IGBT = "FF600R17ME4"
-type_pad = "Test_Buck_2L"
 
 v_dc = 900
 freq_sw = 2000.0
@@ -37,41 +35,40 @@ t4_D1 = 0
 t5_D1 = 0
 t6_D1 = 0
 t7_D1 = temp_input
-t1_T2 = 0
-t2_T2 = 0
-t3_T2 = 0
-t4_T2 = 0
-t5_T2 = 0
-t6_T2 = 0
-t7_T2 = temp_input
-t1_D2 = 0
-t2_D2 = 0
-t3_D2 = 0
-t4_D2 = 0
-t5_D2 = 0
-t6_D2 = 0
-t7_D2 = temp_input
+t1_T5 = 0
+t2_T5 = 0
+t3_T5 = 0
+t4_T5 = 0
+t5_T5 = 0
+t6_T5 = 0
+t7_T5 = temp_input
+t1_D5 = 0
+t2_D5 = 0
+t3_D5 = 0
+t4_D5 = 0
+t5_D5 = 0
+t6_D5 = 0
+t7_D5 = temp_input
 
 t7_T1_list = []
 t7_D1_list = []
-t7_T2_list = []
-t7_D2_list = []
+t7_T5_list = []
+t7_D5_list = []
 
 p_T1_tot = 0
 p_D1_tot = 0
-p_T2_tot = 0
-p_D2_tot = 0
-
+p_T5_tot = 0
+p_D5_tot = 0
 
 p_T1_tot_list = []
 p_D1_tot_list = []
-p_T2_tot_list = []
-p_D2_tot_list = []
+p_T5_tot_list = []
+p_D5_tot_list = []
 
 thermalList = [   [t1_T1, t2_T1, t3_T1, t4_T1, t5_T1, t6_T1, t7_T1], 
                   [t1_D1, t2_D1, t3_D1, t4_D1, t5_D1, t6_D1, t7_D1],
-                  [t1_T2, t2_T2, t3_T2, t4_T2, t5_T2, t6_T2, t7_T2], 
-                  [t1_D2, t2_D2, t3_D2, t4_D2, t5_D2, t6_D2, t7_D2]]
+                  [t1_T5, t2_T5, t3_T5, t4_T5, t5_T5, t6_T5, t7_T5], 
+                  [t1_D5, t2_D5, t3_D5, t4_D5, t5_D5, t6_D5, t7_D5]]
 
 for i in range(num_sw_cycle_tot):
     i_current= i_base
@@ -90,26 +87,24 @@ for i in range(num_sw_cycle_tot):
     t7_T2_list.append(thermalList[2][6])
     t7_D2_list.append(thermalList[3][6])
 
-print("p_T1_on ",(e_out["e_on_T1"])*2000)
-print("p_T1_off",(e_out["e_off_T1"])*2000)
-print("p_T1_cond ",e_out["e_cond_T1"]*2000)
-print("p_D2_Sw ",(e_out["e_rec_D2"])*2000)
-print("p_D2_cond ",e_out["e_cond_D2"]*2000)
 
 
-plt.figure()
-plt.subplot(2,1,1)
-plt.plot(t7_T1_list,label="T1")
-#plt.plot(t7_D1_list,label="D1")
-#plt.plot(t7_T2_list,label="T2")
-plt.plot(t7_D2_list,label="D2")
-plt.legend()
-plt.grid()
-plt.subplot(2,1,2)
-plt.plot(p_T1_tot_list,label="T1")
-#plt.plot(p_D1_tot_list,label="D1")
-#plt.plot(p_T2_tot_list,label="T2")
-plt.plot(p_D2_tot_list,label="D2")
-plt.legend()
-plt.grid()
-plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
